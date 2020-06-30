@@ -27,31 +27,29 @@ function handlerGame(ev) {
     random = getRandomNumber();
     console.log(userNumber.value);
     checkNumber(random);
-    attemps++;
     increaseAttemp();
   } else {
-    attemps++;
     checkNumber(random);
     increaseAttemp();
-
   }
 }
 
 // check the number and shows the hints
 function checkNumber(num) {
-  if(userNumber.value < 0 || userNumber.value > 100) {
+  const userValue = parseInt(userNumber.value);
+  if(userValue < 0 || userValue > 100) {
     clue4.classList.remove('hidden');
-  } else if(userNumber.value < random) {
+  } else if(userValue < random) {
     clue3.classList.remove('hidden');
-  } else if(userNumber.value > random) {
+  } else if(userValue > random) {
     clue2.classList.remove('hidden');
-  } else if (userNumber.value == random){
+  } else if (userValue === random){
     clue5.classList.remove('hidden');
   }
 }
 
 function increaseAttemp() {
-  console.log(attemps); 
+  attemps++;
   attempShow.innerHTML = attemps;
 }
 
