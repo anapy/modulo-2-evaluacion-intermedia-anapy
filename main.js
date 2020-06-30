@@ -26,12 +26,12 @@ function handlerGame(ev) {
   ev.preventDefault();
   hideClues();
   if(attemps === 0) {
-    let number = getRandomNumber();
+    random = getRandomNumber();
     console.log(userNumber.value);
-    checkNumber(number);
+    checkNumber(random);
     attemps++;
   } else {
-    checkNumber(number);
+    checkNumber(random);
   }
 
 }
@@ -44,11 +44,11 @@ function checkNumber(num) {
     clue3.classList.remove('hidden');
   } else if(userNumber.value > random) {
     clue2.classList.remove('hidden');
-  } else if (userNumber.value === random){
+  } else if (userNumber.value == random){
+    debugger;
     clue5.classList.remove('hidden');
   }
 }
-
 
 function hideClues() {
   for(const clue of clues) {
