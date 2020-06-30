@@ -1,7 +1,7 @@
 'use strict'
 const button  = document.querySelector('.js-button');
 const userNumber = document.querySelector('.js-userNumber');
-let attemps = document.querySelector('.attemps');
+const attempShow = document.querySelector('.attemps');
 const clues = document.querySelectorAll('.clue');
 const clue1 = document.querySelector('.clue1');
 const clue2 = document.querySelector('.clue2');
@@ -9,9 +9,7 @@ const clue3 = document.querySelector('.clue3');
 const clue4 = document.querySelector('.clue4');
 const clue5 = document.querySelector('.clue5');
 
-
-
-attemps = parseInt(attemps.innerHTML);
+let attemps = 0;
 let random = 0;
 
 //Generates a random number for each game
@@ -30,14 +28,17 @@ function handlerGame(ev) {
     console.log(userNumber.value);
     checkNumber(random);
     attemps++;
+    increaseAttemp();
   } else {
+    attemps++;
     checkNumber(random);
-  }
+    increaseAttemp();
 
+  }
 }
 
+// check the number and shows the hints
 function checkNumber(num) {
-  debugger;
   if(userNumber.value < 0 || userNumber.value > 100) {
     clue4.classList.remove('hidden');
   } else if(userNumber.value < random) {
@@ -45,9 +46,13 @@ function checkNumber(num) {
   } else if(userNumber.value > random) {
     clue2.classList.remove('hidden');
   } else if (userNumber.value == random){
-    debugger;
     clue5.classList.remove('hidden');
   }
+}
+
+function increaseAttemp() {
+  console.log(attemps); 
+  attempShow.innerHTML = attemps;
 }
 
 function hideClues() {
