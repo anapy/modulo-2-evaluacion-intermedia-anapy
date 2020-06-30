@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <title>Evaluación intermedia 2</title>
+</head>
+<body>
+  <main class="main">
+    <h1>Adivina el número</h1>
+    <form>
+      <label for="userNumber">Introduce aquí tu número</label>
+      <input type="number" name="userNumber" id="userNumber" class="js-userNumber">
+      <input type="submit" value="Prueba" class="js-button button">
+    </form>
+    <div class="clues">
+      <p class="clue clue1">Pista: Escribe el número y dale a Prueba</p>
+      <p class="clue clue2 hidden">Pista: Demasiado alto</p>
+      <p class="clue clue3 hidden">Pista: Demasiado bajo</p>
+      <p class="clue clue4 hidden">Pista: El número debe estar entre 1 y 100.</p>
+      <p class="clue clue5 hidden">Has ganado campeona!!!</p>  
+    </div>
+    <div class="attemps-container">
+      <p>Número de intentos: <span class="attemps">0</span></p>
+    </div>
+  </main>
+  <script src="./main.js" ></script>
+</body>
+</html>
