@@ -11,6 +11,16 @@
 
 .main {
   margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid rgb(197, 130, 183);
+}
+
+.input {
+  background-color: #eed0e0;
+  text-align: center;
 }
 
 .hidden {
@@ -26,4 +36,10 @@
 
 .clue, .text {
   background-color: #c998b3;
+  width: 500px;
+}
+#button {
+  background-color: #c998b3;
+  width: 125px;
+  font-family: inherit;
 }
