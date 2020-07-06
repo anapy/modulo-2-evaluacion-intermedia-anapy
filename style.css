@@ -4,19 +4,33 @@
   margin: 0;
   font-family: 'Open Sans', sans-serif;
 } 
+body {
+  background-color: rgb(158, 198, 221);;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+color: inherit;
+font-family: inherit;
+outline: none;
+}
+
 .title {
   text-align: center;
   color: rgb(35, 48, 121);
 }
 
 .main {
+  min-width: 550px;
   margin: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border: 5px solid rgb(130, 148, 197);
-  background-color: rgb(158, 219, 221);;
+  background-color: rgb(158, 198, 221);
+  padding: 20px;
 }
 
 .input {
@@ -26,20 +40,59 @@
 
 .hidden {
   display: none;
-  
 }
 
 .text, .game {
   text-align: center;
   margin: 10px;
+  width: 100%;
+
 }
 
 .clue, .text {
-  background-color: #c998b3;
-  width: 500px;
+  background-color: #d3a1c4;
+  width: 100%;
+  width: 450px;
 }
-#button {
-  background-color: #c998b3;
-  width: 125px;
+.button {
+  background-color: #ca4d87;
+  width: 100px;
+  height: 40px;
   font-family: inherit;
+  border-radius: 20px;
+  color: white;
+  border: 3px solid black;
+  outline: none;
+}
+button:active, .button:active {
+  background-color: #d3a1c4;
+}
+button:click {
+  background-color: #d3a1c4;
+}
+
+.reset-button {
+  background-color: #ca4d87;
+  width: 170px;
+  height: 50px;
+  font-family: inherit;
+  border-radius: 20px;
+  color: white;
+  font-weight: 800px;
+  font-size: 16px;
+  border: 3px solid black;
+}
+
+.clue5 {
+  background-color: #d3a1c4;
+  height: 50px;
+  z-index: 1;
+  top: 110px;
+  left: 400px;
+  width: 450px;
+  color: white;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 20px;
+  border: 3px solid #270725;
 }
