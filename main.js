@@ -40,7 +40,7 @@ function checkNumber(num) {
   } else if(userValue > num) {
     clue.innerHTML = 'Pista: Demasiado alto';
   } else if (userValue === num){
-    clue.innerHTML = 'Pista: Has ganado campeona!!!';
+    clue.innerHTML = '¡¡¡Has ganado campeona!!!';
     clue.classList.add('win');
     button.setAttribute('disabled', '');
     resetButton.classList.remove('hidden');
