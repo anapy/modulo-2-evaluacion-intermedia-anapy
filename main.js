@@ -42,6 +42,7 @@ function checkNumber(num) {
   } else if (userValue === num){
     clue.innerHTML = 'Pista: Has ganado campeona!!!';
     clue.classList.add('win');
+    button.setAttribute('disabled', '');
     resetButton.classList.remove('hidden');
   } else {
     clue.innerHTML = 'Pista: El valor no es válido';
@@ -61,7 +62,11 @@ function resetGame() {
   clue.classList.remove('win');
   clue.innerHTML = 'Pista: Escribe el número y dale a Prueba';
   console.log(random);
+  button.removeAttribute('disabled', '');
+
 }
+
+
 
 button.addEventListener('click', handlerGame);
 resetButton.addEventListener('click', resetGame);
