@@ -22,20 +22,26 @@ outline: none;
 }
 
 .main {
-  min-width: 550px;
+  min-width: 320px;
   margin: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   border: 5px solid rgb(130, 148, 197);
   background-color: rgb(158, 198, 221);
   padding: 20px;
+  }
 }
 
 .input {
   background-color: #d0dcee;
   text-align: center;
+  width: 30px;
+  margin-top: 10px;
+}
+
+.instructions {
+  margin-top: 10px;
 }
 
 .hidden {
@@ -45,14 +51,13 @@ outline: none;
 .text, .game {
   text-align: center;
   margin: 10px;
-  width: 100%;
+
 
 }
 
 .clue, .text {
   background-color: #d3a1c4;
-  width: 100%;
-  width: 450px;
+  min-width: 260px;
 }
 .button {
   background-color: #ca4d87;
@@ -63,6 +68,8 @@ outline: none;
   color: white;
   border: 3px solid black;
   outline: none;
+  margin-top: 10px;
+
 }
 button:active, .button:active {
   background-color: #d3a1c4;
@@ -89,7 +96,7 @@ button:click {
   z-index: 1;
   top: 110px;
   left: 400px;
-  width: 450px;
+  min-width: 320px;
   color: white;
   font-size: 20px;
   padding: 5px;
