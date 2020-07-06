@@ -102,6 +102,7 @@ button:click {
   border-radius: 20px;
   border: 3px solid #270725;
   animation: winner 3s infinite;
+  margin: 0;
 }
 
 @keyframes winner {
