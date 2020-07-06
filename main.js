@@ -4,12 +4,7 @@ const resetButton  = document.querySelector('.js-reset-button');
 const userNumber = document.querySelector('.js-userNumber');
 const attempShow = document.querySelector('.attemps');
 const clues = document.querySelectorAll('.clue');
-const clue1 = document.querySelector('.clue1');
-const clue2 = document.querySelector('.clue2');
-const clue3 = document.querySelector('.clue3');
-const clue4 = document.querySelector('.clue4');
-const clue5 = document.querySelector('.clue5');
-const clue6 = document.querySelector('.clue6');
+const clue = document.querySelector('.clue');
 
 let attemps = 0;
 let random = getRandomNumber();
@@ -24,9 +19,8 @@ function getRandomNumber() {
 //Distributes game, if it is the first attemp generates a new random number, if it's another attemp check the number
 function handlerGame(ev) {
   ev.preventDefault();
-  hideClues();
   if(userNumber.value.length <= 0) {
-    clue6.classList.remove('hidden');
+    clue.innerHTML = 'El número no puede estar vacío';
   } else if(attemps === 0) {
     checkNumber(random);
     increaseAttemp();
@@ -40,15 +34,17 @@ function handlerGame(ev) {
 function checkNumber(num) {
   const userValue = parseInt(userNumber.value);
   if(userValue < 0 || userValue > 100) {
-    clue4.classList.remove('hidden');
+    clue.innerHTML = 'Pista: El número debe estar entre 1 y 100';
   } else if(userValue < num) {
-    clue3.classList.remove('hidden');
+    clue.innerHTML = 'Pista: Demasiado bajo';
   } else if(userValue > num) {
-    clue2.classList.remove('hidden');
+    clue.innerHTML = 'Pista: Demasiado alto';
   } else if (userValue === num){
-    clue5.classList.remove('hidden');
+    clue.innerHTML = 'Pista: Has ganado campeona!!!';
+    clue.classList.add('win');
+    resetButton.classList.remove('hidden');
   } else {
-
+    clue.innerHTML = 'Pista: El valor no es válido';
   }
 }
 
@@ -57,18 +53,14 @@ function increaseAttemp() {
   attempShow.innerHTML = attemps;
 }
 
-function hideClues() {
-  for(const clue of clues) {
-    clue.classList.add('hidden');
-  }
-}
-
 function resetGame() {
   attemps = 0;
   attempShow.innerHTML = attemps;
   random = getRandomNumber();
-  hideClues();
-  clue1.classList.remove('hidden');
+  resetButton.classList.add('hidden');    
+  clue.classList.remove('win');
+  clue.innerHTML = 'Pista: Escribe el número y dale a Prueba';
+  console.log(random);
 }
 
 button.addEventListener('click', handlerGame);
