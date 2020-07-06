@@ -6,7 +6,7 @@
 } 
 .title {
   text-align: center;
-  color: rgb(133, 26, 110);
+  color: rgb(35, 48, 121);
 }
 
 .main {
@@ -15,11 +15,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 5px solid rgb(197, 130, 183);
+  border: 5px solid rgb(130, 148, 197);
+  background-color: rgb(158, 219, 221);;
 }
 
 .input {
-  background-color: #eed0e0;
+  background-color: #d0dcee;
   text-align: center;
 }
 
@@ -31,7 +32,6 @@
 .text, .game {
   text-align: center;
   margin: 10px;
-  
 }
 
 .clue, .text {
