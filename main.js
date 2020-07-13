@@ -33,19 +33,19 @@ function handlerGame(ev) {
 // check the number and shows the hints
 function checkNumber(num) {
   const userValue = parseInt(userNumber.value);
-  if(userValue < 0 || userValue > 100) {
-    clue.innerHTML = 'Pista: El número debe estar entre 1 y 100';
+  if(userValue <= 0 || userValue >= 100) {
+    changeHTML('Pista: El número debe estar entre 1 y 100');
   } else if(userValue < num) {
-    clue.innerHTML = 'Pista: Demasiado bajo';
+    changeHTML('Pista: Demasiado bajo');
   } else if(userValue > num) {
-    clue.innerHTML = 'Pista: Demasiado alto';
+    changeHTML('Pista: Demasiado alto');
   } else if (userValue === num){
-    clue.innerHTML = '¡¡¡Has ganado campeona!!!';
+    changeHTML('¡¡¡Has ganado campeona!!!')
     clue.classList.add('win');
     button.setAttribute('disabled', '');
     resetButton.classList.remove('hidden');
   } else {
-    clue.innerHTML = 'Pista: El valor no es válido';
+    changeHTML('Pista: El valor no es válido');
   }
 }
 
@@ -63,9 +63,11 @@ function resetGame() {
   clue.innerHTML = 'Pista: Escribe el número y dale a Prueba';
   console.log(random);
   button.removeAttribute('disabled', '');
-
 }
 
+function changeHTML(text) {
+  clue.innerHTML = text;
+}
 
 
 button.addEventListener('click', handlerGame);
